@@ -183,8 +183,34 @@
 
       .board-note h2 { font-size: 20px; font-weight: 900; margin: 0 0 4px; }
 
+      /* ---------- section jump nav ---------- */
+      .gear-nav {
+        position: sticky; top: 0; z-index: 20;
+        display: flex; flex-wrap: wrap; gap: 8px;
+        margin-top: 26px; padding: 12px 0 10px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+      }
+      .gear-nav a {
+        display: inline-flex; align-items: center; gap: 8px;
+        border: 1px solid var(--line); background: var(--surface);
+        color: var(--ink); text-decoration: none;
+        border-radius: 999px; padding: 8px 16px; min-height: 44px;
+        font-size: 14px; font-weight: 700; line-height: 1.3;
+      }
+      .gear-nav a .en {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11.5px; font-weight: 600; letter-spacing: .18em; color: var(--blue-ink);
+      }
+      .gear-nav a:hover { border-color: var(--blue); color: var(--blue-ink); }
+      .gear-nav a:active { background: var(--blue-soft); }
+      @media (max-width: 560px) {
+        .gear-nav { gap: 6px; margin-top: 20px; }
+        .gear-nav a { padding: 8px 13px; font-size: 13.5px; }
+      }
+
       /* ---------- section headings ---------- */
-      .sec-head { margin-top: 54px; }
+      .sec-head { margin-top: 54px; scroll-margin-top: 88px; }
       .sec-head h2 {
         margin: 0; font-size: clamp(26px, 4.6vw, 36px); font-weight: 900; line-height: 1.25;
       }
@@ -406,7 +432,15 @@
         </p>
       </header>
 
-      <div class="sec-head">
+      <nav class="gear-nav" aria-label="機材カテゴリへのジャンプ">
+        <a href="#guitars">ギター<span class="en">GUITARS</span></a>
+        <a href="#effects">エフェクター<span class="en">EFFECTS</span></a>
+        <a href="#ampsim">アンプシミュレーター<span class="en">AMP SIM</span></a>
+        <a href="#recording">オーディオインターフェース<span class="en">INTERFACE</span></a>
+        <a href="#accessories">ギター小物<span class="en">ACCESSORIES</span></a>
+      </nav>
+
+      <div class="sec-head" id="guitars">
         <h2><span class="en">GUITARS</span>ギター</h2>
         <p>メインの7弦からヘッドレスまで、性格の違う4本を使い分けています。</p>
       </div>
@@ -538,7 +572,7 @@
 
       </div>
 
-      <div class="sec-head">
+      <div class="sec-head" id="effects">
         <h2><span class="en">PEDALBOARD</span>ペダルボード</h2>
         <p>足元の4台。歪みは1台に絞り、味付けは“足で動かす系”で作ります。</p>
       </div>
@@ -681,7 +715,7 @@
 
       </div>
 
-      <div class="sec-head">
+      <div class="sec-head" id="ampsim">
         <h2><span class="en">AMP SIMULATOR — NEURAL DSP</span>アンプシミュレーター</h2>
         <p>録音や宅録では、アンプ実機の代わりにNeural DSPのプラグインを使っています。実際に使っているのは以下の6本で、ギター用5本とベース用1本（Parallax）です。画像はNeural DSP公式のプロダクト画像で、各プラグインの詳細は公式サイトで確認できます。</p>
       </div>
@@ -854,7 +888,7 @@
 
       </div>
 
-      <div class="sec-head">
+      <div class="sec-head" id="recording">
         <h2><span class="en">RECORDING</span>レコーディング</h2>
         <p>ギターの音をPCに取り込む入り口。録音も配信も、この1台から始まります。</p>
       </div>
@@ -895,7 +929,7 @@
 
       </div>
 
-      <div class="sec-head">
+      <div class="sec-head" id="accessories">
         <h2><span class="en">STRINGS &amp; ACCESSORIES</span>弦・小物</h2>
         <p>弦とピックは消耗品だからこそ、素直に差が出るところ。コーティング弦のELIXIR OPTIWEBをゲージ違いで2種類と、ピックはTORTEXの0.60mmを使っています。</p>
       </div>
